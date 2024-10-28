@@ -16,7 +16,7 @@ export default function Banner() {
     return (
         <div className='p-2 block relative h-[80vh] text-shadow-2' onClick={()=>setIndex(index+1)}>
             <Image src={covers[index%3]} alt='cover' fill={true} priority objectFit='cover'></Image>
-            <div className='text-center z-30 m-12 relative [text-shadow:_2px_3px_5px_#000000]'>
+            <div className='text-center z-20 m-12 relative [text-shadow:_2px_3px_5px_#000000]'>
                 <h1 className='text-3xl text-white font-medium'>Your Travel Partner</h1>
                 <h3 className='text-lg text-white font-serif'>Explore Warudo with us!</h3>
             </div>
