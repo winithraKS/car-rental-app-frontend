@@ -15,7 +15,7 @@ export default async function UserDateil() {
                         <tr><td>password :</td><td>$0ftw@reD3v</td></tr>
                     </tbody>
                 </table>
-                <p className='m-3 mt-10'>or</p>
+                <p className='m-3 mt-5'>or</p>
                 <table>
                     <tbody>
                         <tr><td className='w-32'>email :</td><td>customer@gmail.com</td></tr>
