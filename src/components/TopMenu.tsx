@@ -1,26 +1,29 @@
 'use client'
 
-import Image from "next/image";
-import TopMenuItem from "./TopMenuItem";
-import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
+import Image from 'next/image';
+import TopMenuItem from './TopMenuItem';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 export default function TopMenu() {
-
     const router = useRouter()
     const {data:session} = useSession()
 
     return (
-        <div className="flex flex-row inset-0 h-12 absolute fixed z-30 bg-sky-200 border-y-white">
-            <div className="flex flex-row w-1/2">
-                {session? <TopMenuItem title='Sign-Out' pageRef="/api/auth/signout"/> 
-                :<TopMenuItem title='Sign-In' pageRef="/api/auth/signin"/>}
-                <TopMenuItem title='My Booking' pageRef="/mybooking"/>
+        <div className='h-12 fixed bg-slate-50 flex z-30 inset-0 w-full flex-row'>
+            <Image src={'/img/logo.jpg'} onClick={()=>router.replace('/')} className='h-full w-auto' alt='logo' width={0} height={0} sizes="100vh"/>
+            <div className='flex flex-row w-1/2'>
+                <TopMenuItem title='Select Car' pageRef='/car'/>
+                <TopMenuItem title='Reservations' pageRef='/reservations'></TopMenuItem>
+                <TopMenuItem title='About' pageRef='/about'></TopMenuItem>
             </div>
-            <div className="flex flex-row-reverse w-1/2">
-                <Image src='/img/logo.png' onClick={()=>router.push('/')} className="h-full w-auto" width={0} height={0} sizes="100vh" alt='logo'/>
-                <TopMenuItem title='Booking' pageRef="/booking"/>
-                <TopMenuItem title='Hospital' pageRef="/hospital"/>
+            <div className='w-1/2 flex flex-row-reverse'>
+                {
+                session? <TopMenuItem title='Sign-out' pageRef='/api/auth/signout'/>
+                :<TopMenuItem title='Sign-in' pageRef='/api/auth/signin'/>
+                }
+                <TopMenuItem title='Register' pageRef='/register'/>
+                <TopMenuItem title='Cart' pageRef='/cart'/>
             </div>
         </div>
     );

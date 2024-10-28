@@ -1,5 +1,5 @@
 export default async function userRegister(name:string,tel:string,email:string,password:string) {
-    const response = await fetch("https://vaccine-app-backend-blond.vercel.app:443/api/v1/auth/register",{
+    const response = await fetch("https://car-rental-app-backend-red.vercel.app:443/api/v1/auth/register",{
         method: "POST",
         headers:{
             "Content-Type":"application/json"
@@ -10,7 +10,7 @@ export default async function userRegister(name:string,tel:string,email:string,p
             tel: tel,
             role: "user",
             password: password,
-            createdAt: "2024-10-15",
+            createdAt: "2024-10-27",
         })
     })
 

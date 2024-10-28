@@ -97,9 +97,9 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb)); */
-  margin-top: 48px;
   background-color: white;
-  color:black;
+  color : black;
+  margin-top: 48px;
 }
 
 a {

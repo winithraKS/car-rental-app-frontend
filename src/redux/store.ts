@@ -1,11 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import bookSlice from "./features/bookSlice";
+import cartSlice from "./features/cartSlice";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
-import { persistReducer, WebStorage } from "redux-persist";
+import { WebStorage } from "redux-persist/lib/types";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
+import { FLUSH, PAUSE, PERSIST, persistReducer, PURGE, REGISTER, REHYDRATE } from "redux-persist";
 
-function createLocalStorage() : WebStorage {
-    const isServer = typeof window==='undefined'
+function createPersistStorage(): WebStorage {
+    const isServer = typeof window === 'undefined'
     if(isServer) {
         return {
             getItem() {return Promise.resolve(null)},
@@ -17,20 +18,25 @@ function createLocalStorage() : WebStorage {
     return createWebStorage('local')
 }
 
-const storage = createLocalStorage()
+const storage = createPersistStorage()
 
 const persistedConfig = {
-    key:'rootPersist',
+    key : 'rootPersist',
     storage
 }
 
-const rootReducer = combineReducers({bookSlice})
-const persistedReducer = persistReducer(persistedConfig,rootReducer)
+const rootReducer = combineReducers({cartSlice})
+const reduxPersistedReducer = persistReducer(persistedConfig,rootReducer)
 
 export const store = configureStore({
-    reducer: persistedReducer
+    reducer: reduxPersistedReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: {
+            ignoredActions: [FLUSH,REHYDRATE,PAUSE,PERSIST,PURGE,REGISTER]
+        }
+    })
 })
 
-export type StateType = ReturnType<typeof store.getState>
-export const useAppSelector: TypedUseSelectorHook<StateType> = useSelector
+type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
+export const useAppSelector:TypedUseSelectorHook<RootState> = useSelector

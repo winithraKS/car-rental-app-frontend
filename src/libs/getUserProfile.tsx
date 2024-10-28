@@ -1,11 +1,11 @@
 export default async function getUserProfile(token:string) {
-    const response = await fetch("https://vaccine-app-backend-blond.vercel.app:443/api/v1/auth/me",{
+    const response = await fetch("https://car-rental-app-backend-red.vercel.app:443/api/v1/auth/me",{
         method:"GET",
-        headers: {
+        headers:{
             authorization: `Bearer ${token}`
         }
     })
 
-    if(!response.ok) throw new Error("fail to get user profile")
+    if(!response.ok) throw new Error("cannot get user profile")
     return await response.json()
 }
