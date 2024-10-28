@@ -1,12 +1,10 @@
 'use client'
 
 import { Button, FormControl, TextField } from "@mui/material";
-import { useSession } from "next-auth/react";
 import { useState } from "react";
-import { authOption } from "@/app/api/auth/[...nextauth]/route";
+import { authOption } from "@/app/api/auth/[...nextauth]/AuthOption";
 import userRegister from "@/libs/userRegister";
 import { useRouter } from "next/navigation";
-import UserDateil from "@/components/UserDetail";
 
 export default function RegisterForm(){
     const [username,setUsername] = useState('')

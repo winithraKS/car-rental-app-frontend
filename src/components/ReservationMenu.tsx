@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import CarSelect from './CarSelect'
 
 export default function ReservationMenu() {
     return(

@@ -1,4 +1,4 @@
-import { authOption } from "@/app/api/auth/[...nextauth]/route"
+import { authOption } from "@/app/api/auth/[...nextauth]/AuthOption"
 import InputAndLabel from "@/components/InputAndLabel"
 import { dbConnect } from "@/db/dbConnect"
 import getUserProfile from "@/libs/getUserProfile"

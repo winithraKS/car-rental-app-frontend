@@ -1,6 +1,5 @@
 'use client'
 
-import { Source_Serif_4 } from "next/font/google";
 import ProductCard from "./productCard";
 import { useReducer, useState } from "react";
 import Link from "next/link";

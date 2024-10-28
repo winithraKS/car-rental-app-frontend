@@ -6,12 +6,6 @@ import Image from "next/image"
 export default async function CarDetailPage({params} : {params:{cid:string}}) {
     const carDetail = await getCar(params.cid)
 
-    const mockCarRepo = new Map()
-    mockCarRepo.set('001',{name:'Honda Civic',image:'/img/civic.jpg'})
-    mockCarRepo.set('002',{name:'Honda Accord',image:'/img/accord.jpeg'})
-    mockCarRepo.set('003',{name:'Toyota Fortuner',image:'/img/fortuner.png'})
-    mockCarRepo.set('004',{name:'Tesla Model 3',image:'/img/tesla.png'})
-    
     return(
         <main className="text-center p-5">
             <h1 className="text-lg font-bold">Car ID {params.cid}</h1>
@@ -31,8 +25,4 @@ export default async function CarDetailPage({params} : {params:{cid:string}}) {
             </div>
         </main>
     )
-}
-
-export async function generateStsticParams() {
-    return [{cid:'001'},{cid:'002'},{cid:'003'},{cid:'004'}]
 }
