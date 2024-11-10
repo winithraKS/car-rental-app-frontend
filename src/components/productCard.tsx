@@ -6,7 +6,7 @@ import InteractiveCard from './InteractiveCard';
 export default function ProductCard({carName, imgSrc,onCompare} : {carName:string , imgSrc:string, onCompare?:Function}) {
 
     return(
-        <InteractiveCard carName={carName}>
+        <InteractiveCard>
             <div className='w-full h-[70%] relative rounded-t-lg'>
                 <Image src={imgSrc} alt='Product Picture' fill={true} objectFit='contain'></Image>
             </div>

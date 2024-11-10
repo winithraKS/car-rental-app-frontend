@@ -5,7 +5,7 @@ import { useReducer, useState } from "react";
 import Link from "next/link";
 import { useRef,useEffect } from "react";
 import getCars from "@/libs/getCars";
-import { CarItem, CarJson } from "../../inteface";
+import { CarItem, CarJson } from "../../interface";
 
 export default function CarPanel() {
     const [carResponse,setCarResponse] = useState<CarJson|null>(null)

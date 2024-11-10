@@ -1,6 +1,6 @@
 import Link from "next/link"
 import ProductCard from "./productCard"
-import { CarItem,CarJson } from "../../inteface"
+import { CarItem,CarJson } from "../../interface"
 
 export default async function CarCatalog({carPromise}:{carPromise:Promise<CarJson>}) {
     const carJson = await carPromise

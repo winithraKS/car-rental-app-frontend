@@ -7,9 +7,8 @@ import dayjs, { Dayjs } from "dayjs";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { ReservationItem } from "../../../inteface";
+import { ReservationItem } from "../../../interface";
 import { addReservation } from "@/redux/features/cartSlice";
-import CarSelect from "@/components/CarSelect";
 
 export default function Reservations() {
 

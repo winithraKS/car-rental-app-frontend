@@ -1,7 +1,7 @@
 'use client'
 
 import { AppDispatch, useAppSelector } from "@/redux/store";
-import { ReservationItem } from "../../inteface";
+import { ReservationItem } from "../../interface";
 import { useDispatch } from "react-redux";
 import { Button } from "@mui/material";
 import { removeReservation } from "@/redux/features/cartSlice";

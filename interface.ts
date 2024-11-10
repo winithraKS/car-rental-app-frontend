@@ -1,27 +1,29 @@
-interface HospitalItem {
-    _id: string,
-    name: string,
-    address: string,
-    district: string,
-    province: string,
-    postalcode: string,
-    tel: string,
-    picture: string,
-    __v: number,
-    id: string
-  }
-  
-  interface HospitalJson {
-    success: boolean,
-    count: number,
-    pagination: Object,
-    data: HospitalItem[]
-  }
+export interface ReservationItem {
+    carID:string,
+    carModel:string,
+    numOfDays:number,
+    pickupDate:string,
+    pickupLocation:string,
+    returnDate:string,
+    returnLocation:string
+}
 
-  interface BookingItem {
-    name: string;
-    surname: string;
-    id: string;
-    hospital: string;
-    bookDate: string;
-  }
+export interface CarJson {
+  success: boolean,
+  count: number,
+  pagination: Object,
+  data: CarItem[]
+}
+
+export interface CarItem {
+    _id : string
+    model : string,
+    description : string,
+    picture : string,
+    seats : number,
+    doors : number,
+    largebags : number,
+    smallbags : number,
+    automatic : boolean,
+    dayRate : number
+}
