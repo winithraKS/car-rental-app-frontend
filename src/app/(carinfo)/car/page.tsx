@@ -4,8 +4,8 @@ import getCars from "@/libs/getCars";
 import { LinearProgress } from "@mui/material";
 import { Suspense } from "react";
 
-export default function Car() {
-    const cars = getCars()
+export default async function Car() {
+    const cars = await getCars()
 
     return(
         <main className='text-center p-5 bg-white'>
