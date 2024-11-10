@@ -82,7 +82,7 @@ export default async function ManagePage() {
                 <input type='number' required id='smallbags' name='smallbags' placeholder="4" min={0} max={10}
                     className="bg-white border-2 border-gray-200 rounded-md w-auto p-2 text-gray-700 focus:border-blue-400 focus:outline-none" />
             </div>
-            <InputAndLabel label='Rate' placeHolder="Daily Rate (including insurance" id='dayRate' />
+            <InputAndLabel label='Rate' placeHolder="Daily Rate (including insurance)" id='dayRate' />
             <button type='submit' className="bg-blue-500 hover:bg-blue-700 text-white p-2 mb-5 rounded">Add New Car</button>
         </form>
     )
